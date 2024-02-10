@@ -1,5 +1,10 @@
 import streamlit
+from langchain_community.document_loaders import PyPDFLoader
+import qdrant_client
+from sentence_transformers import SentenceTransformer
 
+
+def foo(): pass
 
 streamlit.header("Open University Tutor")
 streamlit.write("This platform is for uploading course materials relavant to the courses we are enrolled")
@@ -10,5 +15,8 @@ streamlit.session_state['selected_subject']:streamlit.session_state=streamlit.se
 
 streamlit.file_uploader(label='Choose files for upload')
 
-streamlit.button('Upload')
+if streamlit.button('Upload'):
+    foo()
+
+embedding_model:SentenceTransformer=SentenceTransformer('all-MiniLM-L6-v2')
 
